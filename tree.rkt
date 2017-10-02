@@ -48,8 +48,7 @@
         (if (dir? adjusted-path)
             (if (and (= i (length files)) (dir? adjusted-path)) 
                 (walk adjusted-path (append indent-strings (list " \t")))
-                (walk adjusted-path (append indent-strings (list "│\t")))) '()))
-    (set! indent-strings (if (not (empty? indent-strings)) (shave-off-last indent-strings) indent-strings))))
+                (walk adjusted-path (append indent-strings (list "│\t")))) '()))))
 
 (printf ".\n")
 (walk envoked-location '(""))
